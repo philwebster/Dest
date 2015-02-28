@@ -17,7 +17,7 @@
 		D3B91B061AA19FF600BE07D7 /* DSTDestinationDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B91B051AA19FF600BE07D7 /* DSTDestinationDataView.m */; };
 		D3B91B0A1AA1D59D00BE07D7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B91B091AA1D59D00BE07D7 /* MapKit.framework */; };
 		D3E93A2A1AA163F400E4478D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A291AA163F400E4478D /* main.m */; };
-		D3E93A2D1AA163F400E4478D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A2C1AA163F400E4478D /* AppDelegate.m */; };
+		D3E93A2D1AA163F400E4478D /* DSTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A2C1AA163F400E4478D /* DSTAppDelegate.m */; };
 		D3E93A301AA163F400E4478D /* Dest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A2E1AA163F400E4478D /* Dest.xcdatamodeld */; };
 		D3E93A381AA163F400E4478D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E93A371AA163F400E4478D /* Images.xcassets */; };
 		D3E93A3B1AA163F400E4478D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E93A391AA163F400E4478D /* LaunchScreen.xib */; };
@@ -51,8 +51,8 @@
 		D3E93A241AA163F400E4478D /* Dest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E93A281AA163F400E4478D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E93A291AA163F400E4478D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D3E93A2B1AA163F400E4478D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D3E93A2C1AA163F400E4478D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D3E93A2B1AA163F400E4478D /* DSTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSTAppDelegate.h; sourceTree = "<group>"; };
+		D3E93A2C1AA163F400E4478D /* DSTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSTAppDelegate.m; sourceTree = "<group>"; };
 		D3E93A2F1AA163F400E4478D /* Dest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dest.xcdatamodel; sourceTree = "<group>"; };
 		D3E93A371AA163F400E4478D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3E93A3A1AA163F400E4478D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 				D38635DC1AA17DC500440486 /* DSTPhotosCollectionViewController.h */,
 				D38635DD1AA17DC500440486 /* DSTPhotosCollectionViewController.m */,
 				D38635DE1AA17DC500440486 /* DSTPhotosCollectionViewController.xib */,
-				D3E93A2B1AA163F400E4478D /* AppDelegate.h */,
-				D3E93A2C1AA163F400E4478D /* AppDelegate.m */,
+				D3E93A2B1AA163F400E4478D /* DSTAppDelegate.h */,
+				D3E93A2C1AA163F400E4478D /* DSTAppDelegate.m */,
 				D3E93A371AA163F400E4478D /* Images.xcassets */,
 				D3E93A391AA163F400E4478D /* LaunchScreen.xib */,
 				D3E93A2E1AA163F400E4478D /* Dest.xcdatamodeld */,
@@ -316,7 +316,7 @@
 				D3E93A301AA163F400E4478D /* Dest.xcdatamodeld in Sources */,
 				D38635DF1AA17DC500440486 /* DSTPhotosCollectionViewController.m in Sources */,
 				D3B91B001AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.m in Sources */,
-				D3E93A2D1AA163F400E4478D /* AppDelegate.m in Sources */,
+				D3E93A2D1AA163F400E4478D /* DSTAppDelegate.m in Sources */,
 				D3E93A2A1AA163F400E4478D /* main.m in Sources */,
 				D3B91B061AA19FF600BE07D7 /* DSTDestinationDataView.m in Sources */,
 			);

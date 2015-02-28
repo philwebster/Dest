@@ -19,8 +19,12 @@
         self.container = [[[NSBundle mainBundle] loadNibNamed:className owner:self options:nil] firstObject];
         self.container.frame = self.bounds;
         [self addSubview:self.container];
-        [self.travelButton setTitle:@"Road trip" forState:UIControlStateNormal];
-        [self.travelButton addTarget:self action:@selector(openInMaps) forControlEvents:UIControlEventTouchUpInside];
+        [self.mapButton setTitle:@"Road trip" forState:UIControlStateNormal];
+        [self.mapButton addTarget:self action:@selector(openInMaps) forControlEvents:UIControlEventTouchUpInside];
+        [self.mapButton setHidden:YES];
+        [self.expediaButton setTitle:@"Expedia" forState:UIControlStateNormal];
+        [self.expediaButton addTarget:self action:@selector(openExpedia) forControlEvents:UIControlEventTouchUpInside];
+
         return self;
     }
     return nil;
@@ -29,6 +33,12 @@
 - (void)setMedia:(InstagramMedia *)media {
     _media = media;
     [self.nameLabel setText:media.locationName];
+    if (_media.bestPackage[@"DetailsUrl"]) {
+        self.expediaButton.hidden = NO;
+    }
+    if (_media.directions || YES) {
+        self.mapButton.hidden = YES;
+    }
 }
 
 - (void)setDataForMedia:(InstagramMedia *)cellMedia {
@@ -52,6 +62,16 @@
 
 - (void)openInMaps {
     [MKMapItem openMapsWithItems:@[_media.mapItem] launchOptions:@{MKLaunchOptionsDirectionsModeKey : @"hi"}];
+}
+
+- (void)openExpedia {
+    NSString *urlString = [[_media.bestPackage objectForKey:@"DetailsUrl"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    if (!urlString) {
+        return;
+    }
+    NSURL *expediaURL = [[NSURL alloc] initWithString:urlString];
+    [[UIApplication sharedApplication] openURL:expediaURL];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.google.com"]];
 }
 
 /*

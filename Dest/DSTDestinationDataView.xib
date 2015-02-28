@@ -7,8 +7,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSTDestinationDataView">
             <connections>
                 <outlet property="container" destination="iN0-l3-epB" id="yOf-50-CB2"/>
+                <outlet property="expediaButton" destination="Qba-YB-szd" id="bxA-9h-zP6"/>
+                <outlet property="mapButton" destination="Qxr-re-GjH" id="nJp-iZ-MIf"/>
                 <outlet property="nameLabel" destination="emc-JA-3ca" id="kQD-4p-M7h"/>
-                <outlet property="travelButton" destination="Qxr-re-GjH" id="AST-nt-0B7"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -16,27 +17,35 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxr-re-GjH">
+                    <rect key="frame" x="8" y="36" width="31" height="30"/>
+                    <state key="normal" title="Map">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qba-YB-szd">
+                    <rect key="frame" x="8" y="36.5" width="56" height="30"/>
+                    <state key="normal" title="Expedia">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emc-JA-3ca">
-                    <rect key="frame" x="250.5" y="289" width="99" height="20.5"/>
+                    <rect key="frame" x="8" y="8" width="99" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxr-re-GjH">
-                    <rect key="frame" x="277" y="329.5" width="46" height="30"/>
-                    <state key="normal" title="Button">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="emc-JA-3ca" secondAttribute="centerY" id="36g-LM-AJ1"/>
-                <constraint firstAttribute="centerX" secondItem="Qxr-re-GjH" secondAttribute="centerX" id="DTg-8J-aKK"/>
-                <constraint firstAttribute="centerX" secondItem="emc-JA-3ca" secondAttribute="centerX" id="PDi-mD-x7V"/>
-                <constraint firstItem="Qxr-re-GjH" firstAttribute="top" secondItem="emc-JA-3ca" secondAttribute="bottom" constant="20" id="UIq-uK-9HG"/>
+                <constraint firstItem="emc-JA-3ca" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Bmv-Ik-zgb"/>
+                <constraint firstItem="emc-JA-3ca" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Mml-Ak-Sjd"/>
+                <constraint firstItem="Qxr-re-GjH" firstAttribute="top" secondItem="emc-JA-3ca" secondAttribute="bottom" constant="8" id="UIq-uK-9HG"/>
+                <constraint firstItem="Qxr-re-GjH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="c6u-rU-vkL"/>
+                <constraint firstItem="Qba-YB-szd" firstAttribute="top" secondItem="emc-JA-3ca" secondAttribute="bottom" constant="8" id="uSz-zh-WNx"/>
+                <constraint firstItem="Qba-YB-szd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="xD0-jG-0yE"/>
             </constraints>
-            <point key="canvasLocation" x="402" y="280"/>
+            <point key="canvasLocation" x="408" y="296"/>
         </view>
     </objects>
 </document>

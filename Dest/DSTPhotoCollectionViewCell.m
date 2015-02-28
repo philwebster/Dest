@@ -17,8 +17,22 @@
 
 - (void)setCellMedia:(InstagramMedia *)cellMedia {
     _cellMedia = cellMedia;
+    
     [self.imageView setImageWithURL:cellMedia.standardResolutionImageURL];
     [self.destinationDataView setMedia:cellMedia];
+}
+
+- (void)expediaUrlAdded {
+    self.destinationDataView.expediaButton.hidden = NO;
+}
+
+- (void)directionsAdded {
+    self.destinationDataView.mapButton.hidden = YES;
+}
+
+- (void)prepareForReuse {
+    self.destinationDataView.expediaButton.hidden = YES;
+    self.destinationDataView.mapButton.hidden = YES;
 }
 
 @end

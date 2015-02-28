@@ -6,19 +6,19 @@
 //  Copyright (c) 2015 phil. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "DSTAppDelegate.h"
 #import "DSTPhotosCollectionViewController.h"
 #import "InstagramKit.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate ()
+@interface DSTAppDelegate ()
 
 @property (nonatomic, strong) DSTPhotosCollectionViewController *photosVC;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
-@implementation AppDelegate
+@implementation DSTAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -38,6 +38,8 @@
     InstagramEngine *sharedEngine = [InstagramEngine sharedEngine];
     [sharedEngine setAccessToken:@"1727484202.3e2a3ba.b769c47958a0459795b463b44bf68981"];
 
+    self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://terminal2.expedia.com:80"]];
+    
     return YES;
 }
 

@@ -10,7 +10,7 @@
 #import "DSTDestinationDataView.h"
 #import "InstagramKit.h"
 
-@interface DSTPhotoCollectionViewCell : UICollectionViewCell
+@interface DSTPhotoCollectionViewCell : UICollectionViewCell <mediaUpdateDelegate>
 
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet DSTDestinationDataView *destinationDataView;

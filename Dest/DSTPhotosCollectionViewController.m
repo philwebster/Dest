@@ -9,6 +9,8 @@
 #import "DSTPhotosCollectionViewController.h"
 #import "InstagramKit.h"
 #import "DSTPhotoCollectionViewCell.h"
+#import "AFNetworking.h"
+
 @import CoreLocation;
 
 @interface DSTPhotosCollectionViewController ()
@@ -98,6 +100,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DSTPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.cellMedia = [self.photos objectAtIndex:indexPath.row];
+    cell.cellMedia.delegate = cell;
     return cell;
 }
 
