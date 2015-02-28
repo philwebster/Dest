@@ -18,8 +18,7 @@
 - (void)setCellMedia:(InstagramMedia *)cellMedia {
     _cellMedia = cellMedia;
     [self.imageView setImageWithURL:cellMedia.standardResolutionImageURL];
-    NSString *coordinateString = [NSString stringWithFormat:@"%f, %f", cellMedia.location.latitude, cellMedia.location.longitude];
-    [self.destinationDataView.coordLabel setText:coordinateString];
+    [self.destinationDataView setMedia:cellMedia];
 }
 
 @end

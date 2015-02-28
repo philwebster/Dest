@@ -6,8 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSTDestinationDataView">
             <connections>
-                <outlet property="coordLabel" destination="emc-JA-3ca" id="nFK-JX-ziM"/>
-                <outlet property="view" destination="iN0-l3-epB" id="Kxa-44-t5v"/>
+                <outlet property="container" destination="iN0-l3-epB" id="yOf-50-CB2"/>
+                <outlet property="nameLabel" destination="emc-JA-3ca" id="kQD-4p-M7h"/>
+                <outlet property="travelButton" destination="Qxr-re-GjH" id="AST-nt-0B7"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,19 +16,27 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emc-JA-3ca">
-                    <rect key="frame" x="279" y="290" width="42" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emc-JA-3ca">
+                    <rect key="frame" x="250.5" y="289" width="99" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxr-re-GjH">
+                    <rect key="frame" x="277" y="329.5" width="46" height="30"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.29914276719999999" blue="0.14860513910000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="emc-JA-3ca" secondAttribute="centerY" id="36g-LM-AJ1"/>
+                <constraint firstAttribute="centerX" secondItem="Qxr-re-GjH" secondAttribute="centerX" id="DTg-8J-aKK"/>
                 <constraint firstAttribute="centerX" secondItem="emc-JA-3ca" secondAttribute="centerX" id="PDi-mD-x7V"/>
+                <constraint firstItem="Qxr-re-GjH" firstAttribute="top" secondItem="emc-JA-3ca" secondAttribute="bottom" constant="20" id="UIq-uK-9HG"/>
             </constraints>
-            <point key="canvasLocation" x="389" y="306"/>
+            <point key="canvasLocation" x="402" y="280"/>
         </view>
     </objects>
 </document>

@@ -9,6 +9,7 @@
 #import "DSTPhotosCollectionViewController.h"
 #import "InstagramKit.h"
 #import "DSTPhotoCollectionViewCell.h"
+@import CoreLocation;
 
 @interface DSTPhotosCollectionViewController ()
 
@@ -29,7 +30,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Register cell classes
     [self.collectionView registerNib:[UINib nibWithNibName:@"DSTPhotoCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
-    
+
     // Do any additional setup after loading the view.
     [self loadPhotos];
 }
@@ -75,6 +76,8 @@ static NSString * const reuseIdentifier = @"Cell";
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 #pragma mark <UICollectionViewDelegateFlowLayout>
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -15,6 +15,7 @@
 		D3B91B011AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B91AFF1AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.xib */; };
 		D3B91B031AA19E0900BE07D7 /* DSTDestinationDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B91B021AA19E0900BE07D7 /* DSTDestinationDataView.xib */; };
 		D3B91B061AA19FF600BE07D7 /* DSTDestinationDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B91B051AA19FF600BE07D7 /* DSTDestinationDataView.m */; };
+		D3B91B0A1AA1D59D00BE07D7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B91B091AA1D59D00BE07D7 /* MapKit.framework */; };
 		D3E93A2A1AA163F400E4478D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A291AA163F400E4478D /* main.m */; };
 		D3E93A2D1AA163F400E4478D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A2C1AA163F400E4478D /* AppDelegate.m */; };
 		D3E93A301AA163F400E4478D /* Dest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A2E1AA163F400E4478D /* Dest.xcdatamodeld */; };
@@ -46,6 +47,7 @@
 		D3B91B021AA19E0900BE07D7 /* DSTDestinationDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSTDestinationDataView.xib; sourceTree = "<group>"; };
 		D3B91B041AA19FF600BE07D7 /* DSTDestinationDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTDestinationDataView.h; sourceTree = "<group>"; };
 		D3B91B051AA19FF600BE07D7 /* DSTDestinationDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTDestinationDataView.m; sourceTree = "<group>"; };
+		D3B91B091AA1D59D00BE07D7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D3E93A241AA163F400E4478D /* Dest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E93A281AA163F400E4478D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E93A291AA163F400E4478D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B91B0A1AA1D59D00BE07D7 /* MapKit.framework in Frameworks */,
 				C2619A000459217187D01B72 /* libPods-Dest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +85,7 @@
 		A9BD78AF343641AD157E9BC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3B91B091AA1D59D00BE07D7 /* MapKit.framework */,
 				02B08A584A44EEA8C099E87B /* libPods-Dest.a */,
 			);
 			name = Frameworks;
@@ -216,6 +220,12 @@
 				TargetAttributes = {
 					D3E93A231AA163F400E4478D = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = V9RH239UZW;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					D3E93A3F1AA163F400E4478D = {
 						CreatedOnToolsVersion = 6.2;
@@ -425,7 +435,9 @@
 			baseConfigurationReference = DDD42E0EAA16AAECA3803779 /* Pods-Dest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Dest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -436,7 +448,9 @@
 			baseConfigurationReference = 979C4E10FF8F4CE4FD212749 /* Pods-Dest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Dest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

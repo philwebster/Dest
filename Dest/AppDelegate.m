@@ -9,10 +9,12 @@
 #import "AppDelegate.h"
 #import "DSTPhotosCollectionViewController.h"
 #import "InstagramKit.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface AppDelegate ()
 
 @property (nonatomic, strong) DSTPhotosCollectionViewController *photosVC;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -21,6 +23,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.locationManager = [[CLLocationManager alloc] init];
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.photosVC = [[DSTPhotosCollectionViewController alloc] initWithNibName:@"DSTPhotosCollectionViewController" bundle:nil];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.photosVC];
@@ -31,9 +38,9 @@
     InstagramEngine *sharedEngine = [InstagramEngine sharedEngine];
     [sharedEngine setAccessToken:@"1727484202.3e2a3ba.b769c47958a0459795b463b44bf68981"];
 
-    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
