@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D38635DF1AA17DC500440486 /* DSTPhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38635DD1AA17DC500440486 /* DSTPhotosCollectionViewController.m */; };
+		D38635E01AA17DC500440486 /* DSTPhotosCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38635DE1AA17DC500440486 /* DSTPhotosCollectionViewController.xib */; };
 		D3E93A2A1AA163F400E4478D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A291AA163F400E4478D /* main.m */; };
 		D3E93A2D1AA163F400E4478D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A2C1AA163F400E4478D /* AppDelegate.m */; };
 		D3E93A301AA163F400E4478D /* Dest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A2E1AA163F400E4478D /* Dest.xcdatamodeld */; };
-		D3E93A331AA163F400E4478D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A321AA163F400E4478D /* ViewController.m */; };
-		D3E93A361AA163F400E4478D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E93A341AA163F400E4478D /* Main.storyboard */; };
 		D3E93A381AA163F400E4478D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E93A371AA163F400E4478D /* Images.xcassets */; };
 		D3E93A3B1AA163F400E4478D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E93A391AA163F400E4478D /* LaunchScreen.xib */; };
 		D3E93A471AA163F400E4478D /* DestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A461AA163F400E4478D /* DestTests.m */; };
@@ -28,15 +28,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D38635DC1AA17DC500440486 /* DSTPhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTPhotosCollectionViewController.h; sourceTree = "<group>"; };
+		D38635DD1AA17DC500440486 /* DSTPhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTPhotosCollectionViewController.m; sourceTree = "<group>"; };
+		D38635DE1AA17DC500440486 /* DSTPhotosCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSTPhotosCollectionViewController.xib; sourceTree = "<group>"; };
 		D3E93A241AA163F400E4478D /* Dest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E93A281AA163F400E4478D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E93A291AA163F400E4478D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3E93A2B1AA163F400E4478D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D3E93A2C1AA163F400E4478D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D3E93A2F1AA163F400E4478D /* Dest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dest.xcdatamodel; sourceTree = "<group>"; };
-		D3E93A311AA163F400E4478D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D3E93A321AA163F400E4478D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D3E93A351AA163F400E4478D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3E93A371AA163F400E4478D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3E93A3A1AA163F400E4478D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D3E93A401AA163F400E4478D /* DestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,11 +83,11 @@
 		D3E93A261AA163F400E4478D /* Dest */ = {
 			isa = PBXGroup;
 			children = (
+				D38635DC1AA17DC500440486 /* DSTPhotosCollectionViewController.h */,
+				D38635DD1AA17DC500440486 /* DSTPhotosCollectionViewController.m */,
+				D38635DE1AA17DC500440486 /* DSTPhotosCollectionViewController.xib */,
 				D3E93A2B1AA163F400E4478D /* AppDelegate.h */,
 				D3E93A2C1AA163F400E4478D /* AppDelegate.m */,
-				D3E93A311AA163F400E4478D /* ViewController.h */,
-				D3E93A321AA163F400E4478D /* ViewController.m */,
-				D3E93A341AA163F400E4478D /* Main.storyboard */,
 				D3E93A371AA163F400E4478D /* Images.xcassets */,
 				D3E93A391AA163F400E4478D /* LaunchScreen.xib */,
 				D3E93A2E1AA163F400E4478D /* Dest.xcdatamodeld */,
@@ -202,8 +202,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3E93A361AA163F400E4478D /* Main.storyboard in Resources */,
 				D3E93A3B1AA163F400E4478D /* LaunchScreen.xib in Resources */,
+				D38635E01AA17DC500440486 /* DSTPhotosCollectionViewController.xib in Resources */,
 				D3E93A381AA163F400E4478D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,8 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3E93A301AA163F400E4478D /* Dest.xcdatamodeld in Sources */,
+				D38635DF1AA17DC500440486 /* DSTPhotosCollectionViewController.m in Sources */,
 				D3E93A2D1AA163F400E4478D /* AppDelegate.m in Sources */,
-				D3E93A331AA163F400E4478D /* ViewController.m in Sources */,
 				D3E93A2A1AA163F400E4478D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,14 +248,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D3E93A341AA163F400E4478D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D3E93A351AA163F400E4478D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D3E93A391AA163F400E4478D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -418,6 +410,7 @@
 				D3E93A4C1AA163F400E4478D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3E93A4D1AA163F400E4478D /* Build configuration list for PBXNativeTarget "DestTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +419,7 @@
 				D3E93A4F1AA163F400E4478D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

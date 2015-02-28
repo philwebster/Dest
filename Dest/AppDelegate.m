@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "DSTPhotosCollectionViewController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) DSTPhotosCollectionViewController *photosVC;
 
 @end
 
@@ -17,6 +20,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.photosVC = [[DSTPhotosCollectionViewController alloc] initWithNibName:@"DSTPhotosCollectionViewController" bundle:nil];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.photosVC];
+
+    self.window.rootViewController = self.navigationController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
