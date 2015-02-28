@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2619A000459217187D01B72 /* libPods-Dest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B08A584A44EEA8C099E87B /* libPods-Dest.a */; };
 		D38635DF1AA17DC500440486 /* DSTPhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38635DD1AA17DC500440486 /* DSTPhotosCollectionViewController.m */; };
 		D38635E01AA17DC500440486 /* DSTPhotosCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38635DE1AA17DC500440486 /* DSTPhotosCollectionViewController.xib */; };
+		D3B91AFC1AA1866300BE07D7 /* InstagramKit.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3B91AFB1AA1866300BE07D7 /* InstagramKit.plist */; };
+		D3B91B001AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B91AFE1AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.m */; };
+		D3B91B011AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B91AFF1AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.xib */; };
+		D3B91B031AA19E0900BE07D7 /* DSTDestinationDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B91B021AA19E0900BE07D7 /* DSTDestinationDataView.xib */; };
+		D3B91B061AA19FF600BE07D7 /* DSTDestinationDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B91B051AA19FF600BE07D7 /* DSTDestinationDataView.m */; };
 		D3E93A2A1AA163F400E4478D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A291AA163F400E4478D /* main.m */; };
 		D3E93A2D1AA163F400E4478D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A2C1AA163F400E4478D /* AppDelegate.m */; };
 		D3E93A301AA163F400E4478D /* Dest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A2E1AA163F400E4478D /* Dest.xcdatamodeld */; };
@@ -28,9 +34,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02B08A584A44EEA8C099E87B /* libPods-Dest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		979C4E10FF8F4CE4FD212749 /* Pods-Dest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dest/Pods-Dest.release.xcconfig"; sourceTree = "<group>"; };
 		D38635DC1AA17DC500440486 /* DSTPhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTPhotosCollectionViewController.h; sourceTree = "<group>"; };
 		D38635DD1AA17DC500440486 /* DSTPhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTPhotosCollectionViewController.m; sourceTree = "<group>"; };
 		D38635DE1AA17DC500440486 /* DSTPhotosCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSTPhotosCollectionViewController.xib; sourceTree = "<group>"; };
+		D3B91AFB1AA1866300BE07D7 /* InstagramKit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InstagramKit.plist; sourceTree = "<group>"; };
+		D3B91AFD1AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		D3B91AFE1AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		D3B91AFF1AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSTPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		D3B91B021AA19E0900BE07D7 /* DSTDestinationDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSTDestinationDataView.xib; sourceTree = "<group>"; };
+		D3B91B041AA19FF600BE07D7 /* DSTDestinationDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTDestinationDataView.h; sourceTree = "<group>"; };
+		D3B91B051AA19FF600BE07D7 /* DSTDestinationDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTDestinationDataView.m; sourceTree = "<group>"; };
 		D3E93A241AA163F400E4478D /* Dest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E93A281AA163F400E4478D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E93A291AA163F400E4478D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +57,7 @@
 		D3E93A401AA163F400E4478D /* DestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E93A451AA163F400E4478D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E93A461AA163F400E4478D /* DestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DestTests.m; sourceTree = "<group>"; };
+		DDD42E0EAA16AAECA3803779 /* Pods-Dest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dest/Pods-Dest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2619A000459217187D01B72 /* libPods-Dest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +79,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9BD78AF343641AD157E9BC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02B08A584A44EEA8C099E87B /* libPods-Dest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3CAF9BA080682D063D41453 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDD42E0EAA16AAECA3803779 /* Pods-Dest.debug.xcconfig */,
+				979C4E10FF8F4CE4FD212749 /* Pods-Dest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D3E93A1B1AA163F400E4478D = {
 			isa = PBXGroup;
 			children = (
 				D3E93A261AA163F400E4478D /* Dest */,
 				D3E93A431AA163F400E4478D /* DestTests */,
 				D3E93A251AA163F400E4478D /* Products */,
+				B3CAF9BA080682D063D41453 /* Pods */,
+				A9BD78AF343641AD157E9BC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +119,12 @@
 		D3E93A261AA163F400E4478D /* Dest */ = {
 			isa = PBXGroup;
 			children = (
+				D3B91AFD1AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.h */,
+				D3B91AFE1AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.m */,
+				D3B91AFF1AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.xib */,
+				D3B91B041AA19FF600BE07D7 /* DSTDestinationDataView.h */,
+				D3B91B051AA19FF600BE07D7 /* DSTDestinationDataView.m */,
+				D3B91B021AA19E0900BE07D7 /* DSTDestinationDataView.xib */,
 				D38635DC1AA17DC500440486 /* DSTPhotosCollectionViewController.h */,
 				D38635DD1AA17DC500440486 /* DSTPhotosCollectionViewController.m */,
 				D38635DE1AA17DC500440486 /* DSTPhotosCollectionViewController.xib */,
@@ -99,6 +141,7 @@
 		D3E93A271AA163F400E4478D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3B91AFB1AA1866300BE07D7 /* InstagramKit.plist */,
 				D3E93A281AA163F400E4478D /* Info.plist */,
 				D3E93A291AA163F400E4478D /* main.m */,
 			);
@@ -129,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3E93A4A1AA163F400E4478D /* Build configuration list for PBXNativeTarget "Dest" */;
 			buildPhases = (
+				B5B930E0396335433AFAA12B /* Check Pods Manifest.lock */,
 				D3E93A201AA163F400E4478D /* Sources */,
 				D3E93A211AA163F400E4478D /* Frameworks */,
 				D3E93A221AA163F400E4478D /* Resources */,
+				74F967C8717BDEB313C975B4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,8 +247,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B91B011AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.xib in Resources */,
+				D3B91B031AA19E0900BE07D7 /* DSTDestinationDataView.xib in Resources */,
 				D3E93A3B1AA163F400E4478D /* LaunchScreen.xib in Resources */,
 				D38635E01AA17DC500440486 /* DSTPhotosCollectionViewController.xib in Resources */,
+				D3B91AFC1AA1866300BE07D7 /* InstagramKit.plist in Resources */,
 				D3E93A381AA163F400E4478D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +265,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		74F967C8717BDEB313C975B4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dest/Pods-Dest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5B930E0396335433AFAA12B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3E93A201AA163F400E4478D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -224,8 +305,10 @@
 			files = (
 				D3E93A301AA163F400E4478D /* Dest.xcdatamodeld in Sources */,
 				D38635DF1AA17DC500440486 /* DSTPhotosCollectionViewController.m in Sources */,
+				D3B91B001AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.m in Sources */,
 				D3E93A2D1AA163F400E4478D /* AppDelegate.m in Sources */,
 				D3E93A2A1AA163F400E4478D /* main.m in Sources */,
+				D3B91B061AA19FF600BE07D7 /* DSTDestinationDataView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +422,7 @@
 		};
 		D3E93A4B1AA163F400E4478D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD42E0EAA16AAECA3803779 /* Pods-Dest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Dest/Info.plist;
@@ -349,6 +433,7 @@
 		};
 		D3E93A4C1AA163F400E4478D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 979C4E10FF8F4CE4FD212749 /* Pods-Dest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Dest/Info.plist;

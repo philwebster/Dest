@@ -7,8 +7,13 @@
 //
 
 #import "DSTPhotosCollectionViewController.h"
+#import "InstagramKit.h"
+#import "DSTPhotoCollectionViewCell.h"
 
 @interface DSTPhotosCollectionViewController ()
+
+@property (nonatomic, strong) NSMutableArray *photos;
+@property (nonatomic, strong) InstagramPaginationInfo *currentPaginationInfo;
 
 @end
 
@@ -23,14 +28,42 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"DSTPhotoCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    [self loadPhotos];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadPhotos {
+    InstagramEngine *sharedEngine = [InstagramEngine sharedEngine];
+    if (sharedEngine.accessToken)
+    {
+        [[InstagramEngine sharedEngine] getSelfFeedWithCount:15 maxId:self.currentPaginationInfo.nextMaxId success:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
+            self.currentPaginationInfo = paginationInfo;
+            
+            [self.photos addObjectsFromArray:media];
+            
+            [self reloadData];
+        } failure:^(NSError *error) {
+            NSLog(@"Request Self Feed Failed");
+        }];
+    }
+}
+
+- (void)reloadData {
+    [self.collectionView reloadData];
+}
+
+- (NSMutableArray *)photos {
+    if (!_photos) {
+        _photos = [NSMutableArray array];
+    }
+    return _photos;
 }
 
 /*
@@ -45,7 +78,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDelegateFlowLayout>
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(self.view.frame.size.width, self.view.frame.size.width);
+    return CGSizeMake(self.view.frame.size.width, self.view.frame.size.width + 100);
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -56,14 +89,12 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return self.photos.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
-    // Configure the cell
-    
+    DSTPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.cellMedia = [self.photos objectAtIndex:indexPath.row];
     return cell;
 }
 

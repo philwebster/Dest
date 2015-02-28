@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DSTPhotosCollectionViewController.h"
+#import "InstagramKit.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,10 @@
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
 
+    InstagramEngine *sharedEngine = [InstagramEngine sharedEngine];
+    [sharedEngine setAccessToken:@"1727484202.3e2a3ba.b769c47958a0459795b463b44bf68981"];
+
+    
     return YES;
 }
 
