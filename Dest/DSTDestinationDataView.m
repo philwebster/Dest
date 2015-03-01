@@ -21,7 +21,6 @@
         [self addSubview:self.container];
         [self.mapButton setTitle:@"Road trip" forState:UIControlStateNormal];
         [self.mapButton addTarget:self action:@selector(openInMaps) forControlEvents:UIControlEventTouchUpInside];
-        [self.mapButton setHidden:YES];
         [self.expediaButton setTitle:@"Expedia" forState:UIControlStateNormal];
         [self.expediaButton addTarget:self action:@selector(openExpedia) forControlEvents:UIControlEventTouchUpInside];
 
@@ -30,20 +29,21 @@
     return nil;
 }
 
-- (void)setMedia:(InstagramMedia *)media {
+- (void)setMedia:(DSTInstagramMedia *)media {
     _media = media;
-    [self.nameLabel setText:media.locationName];
-    if (_media.bestPackage[@"DetailsUrl"]) {
-        self.expediaButton.hidden = NO;
-    }
-    if (_media.directions || YES) {
-        self.mapButton.hidden = YES;
-    }
+    [self.nameLabel setText:media.media.locationName];
+//    if (_media.bestPackage[@"DetailsUrl"]) {
+//        [self.expediaButton setTitle:[NSString stringWithFormat:@"Expedia: %@", _media.bestPackage[@"PackagePrice"][@"TotalPrice"][@"Value"]] forState:UIControlStateNormal];
+//        self.expediaButton.hidden = NO;
+//    }
+//    if (_media.directions || YES) {
+//        self.mapButton.hidden = YES;
+//    }
 }
 
-- (void)setDataForMedia:(InstagramMedia *)cellMedia {
-    [self.nameLabel setText:cellMedia.locationName];
-    
+- (void)setDataForMedia:(DSTInstagramMedia *)cellMedia {
+    [self.nameLabel setText:cellMedia.media.locationName];
+    NSLog(@"set name: %@", cellMedia.media.locationName);
 //    if (cellMedia.directions.routes.count > 0 && [cellMedia.directions.routes.firstObject expectedTravelTime] < 18000 || YES) {
 //        MKRoute *firstRoute = cellMedia.directions.routes.firstObject;
 //        CGFloat expectedTimeInSeconds = [firstRoute expectedTravelTime];

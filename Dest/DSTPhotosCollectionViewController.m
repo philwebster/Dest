@@ -10,6 +10,7 @@
 #import "InstagramKit.h"
 #import "DSTPhotoCollectionViewCell.h"
 #import "AFNetworking.h"
+#import "DSTInstagramMedia.h"
 
 @import CoreLocation;
 
@@ -49,7 +50,11 @@ static NSString * const reuseIdentifier = @"Cell";
         [[InstagramEngine sharedEngine] getSelfFeedWithCount:15 maxId:self.currentPaginationInfo.nextMaxId success:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
             self.currentPaginationInfo = paginationInfo;
             
-            [self.photos addObjectsFromArray:media];
+            for (InstagramMedia *m in media) {
+                if (m.locationName) {
+                    [self.photos addObject:[[DSTInstagramMedia alloc] initWithIGMedia:m]];
+                }
+            }
             
             [self reloadData];
         } failure:^(NSError *error) {

@@ -17,14 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxr-re-GjH">
-                    <rect key="frame" x="8" y="36" width="31" height="30"/>
-                    <state key="normal" title="Map">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qba-YB-szd">
-                    <rect key="frame" x="8" y="36.5" width="56" height="30"/>
+                    <rect key="frame" x="8" y="36" width="56" height="30"/>
                     <state key="normal" title="Expedia">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -35,13 +29,18 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxr-re-GjH">
+                    <rect key="frame" x="561" y="36" width="31" height="30"/>
+                    <state key="normal" title="Map">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="emc-JA-3ca" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Bmv-Ik-zgb"/>
                 <constraint firstItem="emc-JA-3ca" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Mml-Ak-Sjd"/>
                 <constraint firstItem="Qxr-re-GjH" firstAttribute="top" secondItem="emc-JA-3ca" secondAttribute="bottom" constant="8" id="UIq-uK-9HG"/>
-                <constraint firstItem="Qxr-re-GjH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="c6u-rU-vkL"/>
+                <constraint firstAttribute="trailing" secondItem="Qxr-re-GjH" secondAttribute="trailing" constant="8" id="cyJ-l9-E1Q"/>
                 <constraint firstItem="Qba-YB-szd" firstAttribute="top" secondItem="emc-JA-3ca" secondAttribute="bottom" constant="8" id="uSz-zh-WNx"/>
                 <constraint firstItem="Qba-YB-szd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="xD0-jG-0yE"/>
             </constraints>

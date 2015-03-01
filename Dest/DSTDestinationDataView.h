@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InstagramKit.h"
+#import "DSTInstagramMedia.h"
 
 @interface DSTDestinationDataView : UIView
 
@@ -15,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 @property (weak, nonatomic) IBOutlet UIButton *expediaButton;
-@property (weak, nonatomic) InstagramMedia *media;
+@property (weak, nonatomic) DSTInstagramMedia *media;
 
 @end
