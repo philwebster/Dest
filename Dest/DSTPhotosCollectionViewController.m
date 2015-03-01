@@ -38,6 +38,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self loadPhotos];
     
     [self setTitle:@"Dest"];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"⚙" style:UIBarButtonItemStyleDone target:self action:nil];
 }
 
 - (void)didReceiveMemoryWarning {

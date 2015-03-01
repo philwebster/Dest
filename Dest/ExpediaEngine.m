@@ -58,11 +58,10 @@
                         continue;
                     }
 
-                    if (thisPopularity >= bestPopularity && thisDistance < bestDistance && ![airport[@"name"] containsString:@"Heli"]) {
+                    if (thisDistance < bestDistance && [airport[@"tags"][@"airport"][@"classification"][@"value"] isEqualToString:@"primary"] && ![airport[@"name"] containsString:@"Heli"]) {
                         closestAirport = airport;
                     }
                 }
-//                NSLog(@"closest airport: %@", closestAirport);
                 if (completion) {
                     completion(closestAirport);
                 }
@@ -120,7 +119,11 @@
                     }
                     if (completion) {
                         completion(package);
+                        return;
                     }
+                }
+                if (completion) {
+                    completion(nil);
                 }
             }] resume];
 }

@@ -85,7 +85,6 @@
                 NSString *flyString = [NSString stringWithFormat:@"$%@", _media.tripInfo[@"PackagePrice"][@"TotalPrice"][@"Value"]];
                 [self.expediaButton setEnabled:YES];
                 [self.expediaButton setTitle:flyString forState:UIControlStateNormal];
-                NSLog(@"setting expedia title for %@: %@", _media.media.locationName, flyString);
             }
         } else {
             if (!_media.hasFlights) {
