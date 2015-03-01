@@ -68,33 +68,34 @@
 }
 
 - (void)updateButtons {
-    if (_media.route) {
-        NSString *routeTime = [MapEngine driveTimeFromTimeInterval:[_media.route expectedTravelTime]];
-        [self.mapButton setTitle:routeTime forState:UIControlStateNormal];
-        [self.mapButton setEnabled:YES];
-    } else {
-        [self.mapButton setTitle:@"" forState:UIControlStateDisabled];
-        [self.mapButton setEnabled:NO];
-    }
-    if (_media.tripInfo) {
-        if ([_media.route expectedTravelTime] < 10000) {
-            [self.expediaButton setTitle:@"No flights" forState:UIControlStateDisabled];
-            [self.expediaButton setEnabled:NO];
-        }
-        if (_media.tripInfo.count > 0) {
-            NSString *flyString = [NSString stringWithFormat:@"$%@", _media.tripInfo[@"PackagePrice"][@"TotalPrice"][@"Value"]];
-            [self.expediaButton setTitle:flyString forState:UIControlStateNormal];
-            [self.expediaButton setEnabled:YES];
-        }
-    } else {
-        if (!_media.hasFlights) {
-            [self.expediaButton setTitle:@"No flights" forState:UIControlStateDisabled];
-            [self.expediaButton setEnabled:NO];
+        if (_media.route) {
+            NSString *routeTime = [MapEngine driveTimeFromTimeInterval:[_media.route expectedTravelTime]];
+            [self.mapButton setTitle:routeTime forState:UIControlStateNormal];
+            [self.mapButton setEnabled:YES];
         } else {
-            [self.expediaButton setTitle:@"Retrieving Flights" forState:UIControlStateDisabled];
-            [self.expediaButton setEnabled:NO];
+            [self.mapButton setTitle:@"" forState:UIControlStateDisabled];
+            [self.mapButton setEnabled:NO];
         }
-    }
+        if (_media.tripInfo) {
+            if ([_media.route expectedTravelTime] < 10000) {
+                [self.expediaButton setTitle:@"No flights" forState:UIControlStateDisabled];
+                [self.expediaButton setEnabled:NO];
+            }
+            if (_media.tripInfo.count > 0) {
+                NSString *flyString = [NSString stringWithFormat:@"$%@", _media.tripInfo[@"PackagePrice"][@"TotalPrice"][@"Value"]];
+                [self.expediaButton setEnabled:YES];
+                [self.expediaButton setTitle:flyString forState:UIControlStateNormal];
+                NSLog(@"setting expedia title for %@: %@", _media.media.locationName, flyString);
+            }
+        } else {
+            if (!_media.hasFlights) {
+                [self.expediaButton setTitle:@"No flights" forState:UIControlStateDisabled];
+                [self.expediaButton setEnabled:NO];
+            } else {
+                [self.expediaButton setTitle:@"Retrieving Flights" forState:UIControlStateDisabled];
+                [self.expediaButton setEnabled:NO];
+            }
+        }
 }
 
 - (void)setDataForMedia:(DSTInstagramMedia *)cellMedia {

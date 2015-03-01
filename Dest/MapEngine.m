@@ -46,7 +46,6 @@
             NSLog(@"error: %@", error);
         }
         if (response.routes.count > 0) {
-            NSLog(@"got a route");
             MKRoute *route = [response.routes firstObject];
             if (completion) {
                 completion(route);

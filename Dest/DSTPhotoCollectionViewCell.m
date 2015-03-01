@@ -36,10 +36,16 @@
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    
-    if ([keyPath isEqual:@"route"] || [keyPath isEqual:@"tripInfo"]) {
-        [self.destinationDataView updateButtons];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([keyPath isEqual:@"route"]) {
+            NSLog(@"notification for route");
+            [self.destinationDataView updateButtons];
+        }
+        if ([keyPath isEqual:@"tripInfo"]) {
+            NSLog(@"notification for tripInfo");
+                [self.destinationDataView updateButtons];
+        }
+    });
 }
 
 - (void)prepareForReuse {
