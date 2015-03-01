@@ -21,6 +21,7 @@
     [self.imageView setImageWithURL:cellMedia.media.standardResolutionImageURL];
     [self.destinationDataView setMedia:cellMedia];
     [_cellMedia addObserver:self forKeyPath:@"route" options:0 context:NULL];
+    [_cellMedia addObserver:self forKeyPath:@"tripInfo" options:0 context:NULL];
 }
 
 - (void)expediaUrlAdded {
@@ -34,17 +35,17 @@
                         change:(NSDictionary *)change
                        context:(void *)context {
     
-    if ([keyPath isEqual:@"route"]) {
-        [self directionsAdded:_cellMedia.route];
+    if ([keyPath isEqual:@"route"] || [keyPath isEqual:@"tripInfo"]) {
+        [self.destinationDataView updateButtons];
     }
 }
 
-- (void)directionsAdded:(MKRoute *)route {
-    [self.destinationDataView updateButtons];
+//- (void)directionsAdded:(MKRoute *)route {
+//    [self.destinationDataView updateButtons];
 //    NSString *routeTime = [MapEngine driveTimeFromTimeInterval:[route expectedTravelTime]];
 //    [self.destinationDataView.mapButton setTitle:routeTime forState:UIControlStateNormal];
 //    NSLog(@"updated directions button");
-}
+//}
 
 - (void)prepareForReuse {
 //    self.destinationDataView.expediaButton.hidden = YES;

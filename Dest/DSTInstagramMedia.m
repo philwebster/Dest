@@ -35,10 +35,17 @@
     if (_tripInfo) {
         return;
     }
+    
     [[ExpediaEngine singleton] tripInfoForOrigin:CLLocationCoordinate2DMake(-999, -999) destination:_media.location completion:^(NSDictionary *tripInfo) {
-        _tripInfo = tripInfo;
-        NSLog(@"dictionary in instagrammedia: %@", tripInfo);
+        self.tripInfo = tripInfo;
     }];
+}
+
+- (void)setTripInfo:(NSDictionary *)tripInfo {
+//    if ([tripInfo class] != [NSDictionary class]) {
+//        NSLog(@"bad: %@", tripInfo);
+//    }
+    _tripInfo = tripInfo;
 }
 
 @end

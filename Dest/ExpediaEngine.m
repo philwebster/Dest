@@ -62,7 +62,7 @@
                         closestAirport = airport;
                     }
                 }
-                NSLog(@"closest airport: %@", closestAirport);
+//                NSLog(@"closest airport: %@", closestAirport);
                 if (completion) {
                     completion(closestAirport);
                 }
@@ -94,9 +94,8 @@
 - (void)tripInfoForOriginAirport:(NSDictionary *)originAirport destination:(NSDictionary *)destinationAirport destinationID:(NSString *)destID completion:(void (^)(NSDictionary *))completion {
     NSString *departureDate = @"2015-03-02";
     NSString *returnDate = @"2015-03-07";
-    NSString *regionID = destID;
     
-    NSURL *expediaRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://terminal2.expedia.com/packages?departureDate=%@&originAirport=%@&destinationAirport=%@&returnDate=%@&regionid=%@&apikey=r3aSGXEhBIJfo6Wm3acwkOZBd3grah7B", departureDate, originAirport[@"tags"][@"iata"][@"airportCode"][@"value"], destinationAirport[@"tags"][@"iata"][@"airportCode"][@"value"], returnDate, regionID]];
+    NSURL *expediaRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://terminal2.expedia.com/packages?departureDate=%@&originAirport=%@&destinationAirport=%@&returnDate=%@&regionid=%@&apikey=r3aSGXEhBIJfo6Wm3acwkOZBd3grah7B", departureDate, @"SFO",/*originAirport[@"tags"][@"iata"][@"airportCode"][@"value"],*/ destinationAirport[@"tags"][@"iata"][@"airportCode"][@"value"], returnDate, destID]];
     NSLog(@"URL for trip info: %@", expediaRequestURL);
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:expediaRequestURL
@@ -104,6 +103,7 @@
                                 NSURLResponse *response,
                                 NSError *error) {
                 // handle response
+
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                 if (error) {
                     NSLog(@"error with expedia package request: %@", error);
@@ -111,15 +111,17 @@
                 }
 
                 NSDictionary *package;
-                for (NSDictionary *p in json) {
-                    if (!package) {
-                        package = p;
-                        continue;
+                if (json[@"PackageSearchResultList"] != [NSNull null] && json[@"PackageSearchResultList"][@"PackageSearchResult"] != [NSNull null]) {
+                    for (NSDictionary *p in json[@"PackageSearchResultList"][@"PackageSearchResult"]) {
+                        if (!package) {
+                            package = p;
+                            continue;
+                        }
+                        NSLog(@"%@", p);
                     }
-                    NSLog(@"%@", p);
-                }
-                if (completion) {
-                    completion(package);
+                    if (completion) {
+                        completion(package);
+                    }
                 }
             }] resume];
 }
