@@ -9,20 +9,14 @@
 #import "InstagramMedia.h"
 @import MapKit;
 
-@protocol mediaUpdateDelegate
-
-- (void)expediaUrlAdded;
-- (void)directionsAdded:(MKRoute *)route;
-
-@end
-
 @interface DSTInstagramMedia : NSObject
 
 @property (nonatomic, readonly) MKMapItem *mapItem;
 @property (nonatomic, strong) MKRoute *route;
 @property (nonatomic, strong) NSDictionary *tripInfo;
-@property (nonatomic, strong) id<mediaUpdateDelegate> delegate;
 @property (nonatomic, strong) InstagramMedia *media;
+@property (nonatomic, assign) BOOL hasFlights;
+@property (nonatomic, assign) BOOL starred;
 
 - (id)initWithIGMedia:(InstagramMedia *)media;
 - (void)populateDirections;

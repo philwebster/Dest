@@ -8,20 +8,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DSTPhotoCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="456" height="571"/>
+            <rect key="frame" x="0.0" y="0.0" width="453" height="598"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="456" height="571"/>
+                <rect key="frame" x="0.0" y="0.0" width="453" height="598"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpS-qR-Zw0" customClass="DSTDestinationDataView">
-                        <rect key="frame" x="0.0" y="456" width="456" height="100"/>
+                        <rect key="frame" x="0.0" y="453" width="453" height="140"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="100" id="int-8c-IPj"/>
+                            <constraint firstAttribute="height" constant="140" id="int-8c-IPj"/>
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-CP-lzB">
-                        <rect key="frame" x="0.0" y="0.0" width="456" height="456"/>
+                        <rect key="frame" x="0.0" y="0.0" width="453" height="453"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Sa4-CP-lzB" secondAttribute="height" id="FeM-OO-9lj"/>
                         </constraints>
@@ -34,15 +34,15 @@
                 <constraint firstItem="CpS-qR-Zw0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JvK-XC-UtU"/>
                 <constraint firstItem="Sa4-CP-lzB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="beS-ZJ-NDd"/>
                 <constraint firstAttribute="trailing" secondItem="Sa4-CP-lzB" secondAttribute="trailing" id="flV-rS-cZe"/>
-                <constraint firstItem="CpS-qR-Zw0" firstAttribute="top" secondItem="Sa4-CP-lzB" secondAttribute="bottom" id="nnf-5S-wpX"/>
+                <constraint firstItem="Sa4-CP-lzB" firstAttribute="bottom" secondItem="CpS-qR-Zw0" secondAttribute="top" id="nnf-5S-wpX"/>
                 <constraint firstItem="Sa4-CP-lzB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="x1E-QB-0Na"/>
             </constraints>
-            <size key="customSize" width="456" height="571"/>
+            <size key="customSize" width="453" height="598"/>
             <connections>
                 <outlet property="destinationDataView" destination="CpS-qR-Zw0" id="8GD-tK-vZR"/>
                 <outlet property="imageView" destination="Sa4-CP-lzB" id="cQt-q8-bNd"/>
             </connections>
-            <point key="canvasLocation" x="316" y="196.5"/>
+            <point key="canvasLocation" x="314.5" y="210"/>
         </collectionViewCell>
     </objects>
 </document>

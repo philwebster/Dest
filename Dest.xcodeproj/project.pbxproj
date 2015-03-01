@@ -25,6 +25,8 @@
 		D3E93A381AA163F400E4478D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E93A371AA163F400E4478D /* Images.xcassets */; };
 		D3E93A3B1AA163F400E4478D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E93A391AA163F400E4478D /* LaunchScreen.xib */; };
 		D3E93A471AA163F400E4478D /* DestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E93A461AA163F400E4478D /* DestTests.m */; };
+		D3EE47F91AA33319005551C6 /* Star-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE47F81AA33319005551C6 /* Star-50.png */; };
+		D3EE47FB1AA335F6005551C6 /* h+a.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EE47FA1AA335F6005551C6 /* h+a.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		D3E93A401AA163F400E4478D /* DestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E93A451AA163F400E4478D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E93A461AA163F400E4478D /* DestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DestTests.m; sourceTree = "<group>"; };
+		D3EE47F81AA33319005551C6 /* Star-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star-50.png"; sourceTree = "<group>"; };
+		D3EE47FA1AA335F6005551C6 /* h+a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "h+a.png"; sourceTree = "<group>"; };
 		DDD42E0EAA16AAECA3803779 /* Pods-Dest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dest/Pods-Dest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +164,8 @@
 		D3E93A271AA163F400E4478D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3EE47F81AA33319005551C6 /* Star-50.png */,
+				D3EE47FA1AA335F6005551C6 /* h+a.png */,
 				D3B91AFB1AA1866300BE07D7 /* InstagramKit.plist */,
 				D3E93A281AA163F400E4478D /* Info.plist */,
 				D3E93A291AA163F400E4478D /* main.m */,
@@ -273,10 +279,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B91B011AA18C4B00BE07D7 /* DSTPhotoCollectionViewCell.xib in Resources */,
+				D3EE47F91AA33319005551C6 /* Star-50.png in Resources */,
 				D3B91B031AA19E0900BE07D7 /* DSTDestinationDataView.xib in Resources */,
 				D3E93A3B1AA163F400E4478D /* LaunchScreen.xib in Resources */,
 				D38635E01AA17DC500440486 /* DSTPhotosCollectionViewController.xib in Resources */,
 				D3B91AFC1AA1866300BE07D7 /* InstagramKit.plist in Resources */,
+				D3EE47FB1AA335F6005551C6 /* h+a.png in Resources */,
 				D3E93A381AA163F400E4478D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

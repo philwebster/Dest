@@ -8,7 +8,16 @@
 
 #import "DSTDestinationDataView.h"
 #import "MapEngine.h"
+#import "InstagramKit.h"
+
 @import MapKit;
+
+@interface DSTDestinationDataView ()
+
+@property UITapGestureRecognizer *tapRecognizer;
+@property UIImage *starImage;
+
+@end
 
 @implementation DSTDestinationDataView
 
@@ -24,46 +33,66 @@
         [self.mapButton addTarget:self action:@selector(openInMaps) forControlEvents:UIControlEventTouchUpInside];
         [self.expediaButton setTitle:@"Expedia" forState:UIControlStateNormal];
         [self.expediaButton addTarget:self action:@selector(openExpedia) forControlEvents:UIControlEventTouchUpInside];
-
+        self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(starTapped)];
+        [self.starImageView addGestureRecognizer:self.tapRecognizer];
+        [self.starImageView setUserInteractionEnabled:YES];
+        self.starImage = [[UIImage imageNamed:@"Star-50"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.starImageView.tintColor = [UIColor colorWithWhite:0.702 alpha:1.000];
+        self.planeImageView.tintColor = [UIColor colorWithWhite:0.333 alpha:1.000];
+        self.starImageView.image = self.starImage;
         return self;
     }
     return nil;
 }
 
+- (void)starTapped {
+    if (_media.starred) {
+        self.starImageView.tintColor = [UIColor colorWithWhite:0.702 alpha:1.000];
+    } else {
+        self.starImageView.tintColor = [UIColor colorWithRed:0.996 green:0.824 blue:0.333 alpha:1.000];
+    }
+    _media.starred = !_media.starred;
+}
+
 - (void)setMedia:(DSTInstagramMedia *)media {
     _media = media;
     [self.nameLabel setText:media.media.locationName];
+    [self.photographerLabel setText:[NSString stringWithFormat:@"by %@", media.media.user.fullName]];
     [self updateButtons];
-    
-//    if (!_media.route) {
-//        self.mapButton.hidden = YES;
-//    }
-//    if (_media.bestPackage[@"DetailsUrl"]) {
-//        [self.expediaButton setTitle:[NSString stringWithFormat:@"Expedia: %@", _media.bestPackage[@"PackagePrice"][@"TotalPrice"][@"Value"]] forState:UIControlStateNormal];
-//        self.expediaButton.hidden = NO;
-//    }
-//    if (_media.directions || YES) {
-//        self.mapButton.hidden = YES;
-//    }
+
+    if (media.starred) {
+        self.starImageView.tintColor = [UIColor colorWithRed:0.996 green:0.824 blue:0.333 alpha:1.000];
+    } else {
+        self.starImageView.tintColor = [UIColor colorWithWhite:0.702 alpha:1.000];
+    }
 }
 
 - (void)updateButtons {
     if (_media.route) {
         NSString *routeTime = [MapEngine driveTimeFromTimeInterval:[_media.route expectedTravelTime]];
         [self.mapButton setTitle:routeTime forState:UIControlStateNormal];
-        self.mapButton.hidden = NO;
+        [self.mapButton setEnabled:YES];
+    } else {
+        [self.mapButton setTitle:@"" forState:UIControlStateDisabled];
+        [self.mapButton setEnabled:NO];
     }
     if (_media.tripInfo) {
-//        if ([_media.tripInfo class] != [NSDictionary class]) {
-//            NSLog(@"not the right class");
-//            return;
-//        }
-//        NSLog(@"was the right class");
+        if ([_media.route expectedTravelTime] < 10000) {
+            [self.expediaButton setTitle:@"No flights" forState:UIControlStateDisabled];
+            [self.expediaButton setEnabled:NO];
+        }
         if (_media.tripInfo.count > 0) {
-            [self.expediaButton setTitle:@"$$$" forState:UIControlStateNormal];
-            self.expediaButton.hidden = NO;
+            NSString *flyString = [NSString stringWithFormat:@"$%@", _media.tripInfo[@"PackagePrice"][@"TotalPrice"][@"Value"]];
+            [self.expediaButton setTitle:flyString forState:UIControlStateNormal];
+            [self.expediaButton setEnabled:YES];
+        }
+    } else {
+        if (!_media.hasFlights) {
+            [self.expediaButton setTitle:@"No flights" forState:UIControlStateDisabled];
+            [self.expediaButton setEnabled:NO];
         } else {
-            self.expediaButton.hidden = YES;
+            [self.expediaButton setTitle:@"Retrieving Flights" forState:UIControlStateDisabled];
+            [self.expediaButton setEnabled:NO];
         }
     }
 }
@@ -71,20 +100,6 @@
 - (void)setDataForMedia:(DSTInstagramMedia *)cellMedia {
     [self.nameLabel setText:cellMedia.media.locationName];
     [self updateButtons];
-//    if (cellMedia.directions.routes.count > 0 && [cellMedia.directions.routes.firstObject expectedTravelTime] < 18000 || YES) {
-//        MKRoute *firstRoute = cellMedia.directions.routes.firstObject;
-//        CGFloat expectedTimeInSeconds = [firstRoute expectedTravelTime];
-//        
-//        long seconds = lroundf(expectedTimeInSeconds); // Modulo (%) operator below needs int or long
-//        
-//        int hour = seconds / 3600;
-//        int mins = (seconds % 3600) / 60;
-//        
-//        NSString *timeString = [NSString stringWithFormat:@"%d %@ %d %@ drive", hour, @"hour", mins, @"minute"];
-//        [self.travelButton setTitle:timeString forState:UIControlStateNormal];
-//    } else {
-//        [self.travelButton setTitle:@"Flights" forState:UIControlStateNormal];
-//    }
 }
 
 - (void)openInMaps {
@@ -92,13 +107,12 @@
 }
 
 - (void)openExpedia {
-////    NSString *urlString = [[_media.tripInfo objectForKey:@"DetailsUrl"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    if (!urlString) {
-//        return;
-//    }
-//    NSURL *expediaURL = [[NSURL alloc] initWithString:urlString];
-//    [[UIApplication sharedApplication] openURL:expediaURL];
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.google.com"]];
+    NSString *urlString = [[_media.tripInfo objectForKey:@"DetailsUrl"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    if (!urlString) {
+        return;
+    }
+    NSURL *expediaURL = [[NSURL alloc] initWithString:urlString];
+    [[UIApplication sharedApplication] openURL:expediaURL];
 }
 
 /*

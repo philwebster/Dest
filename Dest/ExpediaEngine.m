@@ -95,7 +95,7 @@
     NSString *departureDate = @"2015-03-02";
     NSString *returnDate = @"2015-03-07";
     
-    NSURL *expediaRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://terminal2.expedia.com/packages?departureDate=%@&originAirport=%@&destinationAirport=%@&returnDate=%@&regionid=%@&apikey=r3aSGXEhBIJfo6Wm3acwkOZBd3grah7B", departureDate, @"SFO",/*originAirport[@"tags"][@"iata"][@"airportCode"][@"value"],*/ destinationAirport[@"tags"][@"iata"][@"airportCode"][@"value"], returnDate, destID]];
+    NSURL *expediaRequestURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://terminal2.expedia.com/packages?departureDate=%@&originAirport=%@&destinationAirport=%@&returnDate=%@&regionid=%@&limit=10&apikey=r3aSGXEhBIJfo6Wm3acwkOZBd3grah7B", departureDate, @"SFO",/*originAirport[@"tags"][@"iata"][@"airportCode"][@"value"],*/ destinationAirport[@"tags"][@"iata"][@"airportCode"][@"value"], returnDate, destID]];
     NSLog(@"URL for trip info: %@", expediaRequestURL);
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:expediaRequestURL
@@ -117,7 +117,6 @@
                             package = p;
                             continue;
                         }
-                        NSLog(@"%@", p);
                     }
                     if (completion) {
                         completion(package);
@@ -135,6 +134,7 @@
             destinationAirport = airport;
             [self regionIDForAirport:airport completion:^(NSString *regionID) {
                 [self tripInfoForOriginAirport:originAirport destination:destinationAirport destinationID:regionID completion:^(NSDictionary *tripInfo) {
+                    NSLog(@"Got trip info for %@ to %@", originAirport[@"tags"][@"iata"][@"airportCode"][@"value"], destinationAirport[@"tags"][@"iata"][@"airportCode"][@"value"]);
                     if (completion) {
                         completion(tripInfo);
                     }

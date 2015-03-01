@@ -18,6 +18,7 @@
         _media = media;
         _mapItem = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:_media.location addressDictionary:nil]];
         _mapItem.name = _media.locationName;
+        self.hasFlights = YES;
     }
     return self;
 }
@@ -42,9 +43,11 @@
 }
 
 - (void)setTripInfo:(NSDictionary *)tripInfo {
-//    if ([tripInfo class] != [NSDictionary class]) {
-//        NSLog(@"bad: %@", tripInfo);
-//    }
+    if (tripInfo.count > 0) {
+        self.hasFlights = YES;
+    } else {
+        self.hasFlights = NO;
+    }
     _tripInfo = tripInfo;
 }
 

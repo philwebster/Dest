@@ -24,7 +24,7 @@
     int hour = seconds / 3600;
     int mins = (seconds % 3600) / 60;
     if (hour > 0) {
-        return [NSString stringWithFormat:@"%d %@ %d %@ drive", hour, @"hour", mins, @"minute"];
+        return [NSString stringWithFormat:@"%d %@ %d %@ drive", hour, @"hr", mins, @"min"];
     }
     return [NSString stringWithFormat:@"%d %@ drive", mins, @"minute"];
 }

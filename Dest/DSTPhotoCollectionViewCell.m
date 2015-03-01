@@ -16,18 +16,20 @@
 
 @implementation DSTPhotoCollectionViewCell
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.contentView.translatesAutoresizingMaskIntoConstraints = YES;
+}
+
 - (void)setCellMedia:(DSTInstagramMedia *)cellMedia {
     _cellMedia = cellMedia;
     [self.imageView setImageWithURL:cellMedia.media.standardResolutionImageURL];
     [self.destinationDataView setMedia:cellMedia];
     [_cellMedia addObserver:self forKeyPath:@"route" options:0 context:NULL];
     [_cellMedia addObserver:self forKeyPath:@"tripInfo" options:0 context:NULL];
-}
-
-- (void)expediaUrlAdded {
-    NSLog(@"expediaUrlAdded");
-//    [self.destinationDataView.expediaButton setTitle:[NSString stringWithFormat:@"Expedia: %@", _cellMedia.bestPackage[@"PackagePrice"][@"TotalPrice"][@"Value"]] forState:UIControlStateNormal];
-//    self.destinationDataView.expediaButton.hidden = NO;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -40,19 +42,10 @@
     }
 }
 
-//- (void)directionsAdded:(MKRoute *)route {
-//    [self.destinationDataView updateButtons];
-//    NSString *routeTime = [MapEngine driveTimeFromTimeInterval:[route expectedTravelTime]];
-//    [self.destinationDataView.mapButton setTitle:routeTime forState:UIControlStateNormal];
-//    NSLog(@"updated directions button");
-//}
-
 - (void)prepareForReuse {
-//    self.destinationDataView.expediaButton.hidden = YES;
-//    self.destinationDataView.mapButton.hidden = YES;
-
+    [self.destinationDataView.expediaButton setTitle:@"Retrieving Flights" forState:UIControlStateDisabled];
+    [self.destinationDataView.mapButton setTitle:@"Road trip" forState:UIControlStateDisabled];
     self.imageView.image = nil;
-    self.cellMedia.delegate = nil;
 }
 
 @end

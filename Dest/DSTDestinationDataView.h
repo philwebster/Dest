@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 @property (weak, nonatomic) IBOutlet UIButton *expediaButton;
+@property (weak, nonatomic) IBOutlet UILabel *photographerLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *starImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *planeImageView;
 @property (weak, nonatomic) DSTInstagramMedia *media;
 
 - (void)updateButtons;

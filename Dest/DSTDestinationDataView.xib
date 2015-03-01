@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSTDestinationDataView">
@@ -10,6 +11,8 @@
                 <outlet property="expediaButton" destination="Qba-YB-szd" id="bxA-9h-zP6"/>
                 <outlet property="mapButton" destination="Qxr-re-GjH" id="nJp-iZ-MIf"/>
                 <outlet property="nameLabel" destination="emc-JA-3ca" id="kQD-4p-M7h"/>
+                <outlet property="photographerLabel" destination="fZM-vS-SRc" id="4Wb-0F-mn2"/>
+                <outlet property="starImageView" destination="GeK-pc-lWk" id="dGI-0v-49a"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -17,34 +20,83 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qba-YB-szd">
-                    <rect key="frame" x="8" y="36" width="60" height="30"/>
-                    <state key="normal" title="Fly for: $">
+                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="emc-JA-3ca">
+                    <rect key="frame" x="8" y="8" width="544" height="31"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="26"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxr-re-GjH">
+                    <rect key="frame" x="561" y="73" width="31" height="30"/>
+                    <state key="normal" title="Map">
+                        <color key="titleColor" red="0.32546248186139837" green="0.61347555734706605" blue="0.87146837783582276" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emc-JA-3ca">
-                    <rect key="frame" x="8" y="8" width="584" height="26.5"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by So &amp; So" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZM-vS-SRc">
+                    <rect key="frame" x="9" y="45" width="81" height="20.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxr-re-GjH">
-                    <rect key="frame" x="561" y="36" width="31" height="30"/>
-                    <state key="normal" title="Map">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GeK-pc-lWk">
+                    <rect key="frame" x="562" y="8" width="30" height="28.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="hHo-UA-qRc"/>
+                        <constraint firstAttribute="width" secondItem="GeK-pc-lWk" secondAttribute="height" multiplier="57:55" id="sWZ-wg-GF1"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="h+a.png" translatesAutoresizingMaskIntoConstraints="NO" id="OCo-gW-ig1">
+                    <rect key="frame" x="8" y="75.5" width="50" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="10R-qh-3lJ"/>
+                        <constraint firstAttribute="height" constant="25" id="9Q0-Rf-THP"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qba-YB-szd">
+                    <rect key="frame" x="66" y="73" width="30" height="30"/>
+                    <state key="normal" title="$">
+                        <color key="titleColor" red="0.32546248189999999" green="0.61347555730000003" blue="0.87146837779999997" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
             </subviews>
             <constraints>
+                <constraint firstItem="OCo-gW-ig1" firstAttribute="centerY" secondItem="Qba-YB-szd" secondAttribute="centerY" constant="1.5" id="1ve-WZ-SgP"/>
+                <constraint firstItem="OCo-gW-ig1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="3n8-Fp-E9S"/>
+                <constraint firstItem="Qxr-re-GjH" firstAttribute="top" secondItem="Qba-YB-szd" secondAttribute="top" id="643-3E-avk"/>
+                <constraint firstItem="OCo-gW-ig1" firstAttribute="centerY" secondItem="Qba-YB-szd" secondAttribute="centerY" id="7ei-rh-YbX"/>
+                <constraint firstItem="fZM-vS-SRc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="9" id="B5I-h2-GTw"/>
                 <constraint firstItem="emc-JA-3ca" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Bmv-Ik-zgb"/>
+                <constraint firstItem="fZM-vS-SRc" firstAttribute="top" secondItem="emc-JA-3ca" secondAttribute="bottom" constant="6" id="CzZ-Nk-6nD"/>
+                <constraint firstItem="OCo-gW-ig1" firstAttribute="centerY" secondItem="Qba-YB-szd" secondAttribute="centerY" constant="-1.5" id="E1p-4G-WSk"/>
+                <constraint firstAttribute="trailing" secondItem="GeK-pc-lWk" secondAttribute="trailing" constant="8" id="Hel-th-vKf"/>
+                <constraint firstItem="GeK-pc-lWk" firstAttribute="leading" secondItem="emc-JA-3ca" secondAttribute="trailing" constant="10" id="If9-TR-yz4"/>
+                <constraint firstItem="fZM-vS-SRc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="IhZ-xH-nYe"/>
+                <constraint firstItem="Qba-YB-szd" firstAttribute="leading" secondItem="OCo-gW-ig1" secondAttribute="trailing" constant="8" id="JIc-NS-kJn"/>
                 <constraint firstItem="emc-JA-3ca" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Mml-Ak-Sjd"/>
-                <constraint firstItem="Qxr-re-GjH" firstAttribute="top" secondItem="emc-JA-3ca" secondAttribute="bottom" constant="8" id="UIq-uK-9HG"/>
+                <constraint firstItem="Qba-YB-szd" firstAttribute="centerY" secondItem="Qxr-re-GjH" secondAttribute="centerY" id="OIt-RW-emI"/>
+                <constraint firstItem="GeK-pc-lWk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Pbs-s0-jbf"/>
                 <constraint firstAttribute="trailing" secondItem="Qxr-re-GjH" secondAttribute="trailing" constant="8" id="cyJ-l9-E1Q"/>
-                <constraint firstItem="Qba-YB-szd" firstAttribute="top" secondItem="emc-JA-3ca" secondAttribute="bottom" constant="8" id="uSz-zh-WNx"/>
-                <constraint firstItem="Qba-YB-szd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="xD0-jG-0yE"/>
+                <constraint firstItem="OCo-gW-ig1" firstAttribute="top" secondItem="fZM-vS-SRc" secondAttribute="bottom" constant="10" id="jQi-nN-Vqq"/>
+                <constraint firstItem="OCo-gW-ig1" firstAttribute="bottom" secondItem="Qba-YB-szd" secondAttribute="bottom" id="mY8-qC-xGR"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="IhZ-xH-nYe"/>
+                    <exclude reference="1ve-WZ-SgP"/>
+                    <exclude reference="E1p-4G-WSk"/>
+                    <exclude reference="mY8-qC-xGR"/>
+                    <exclude reference="643-3E-avk"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="408" y="296"/>
         </view>
     </objects>
+    <resources>
+        <image name="h+a.png" width="100" height="50"/>
+    </resources>
 </document>

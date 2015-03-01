@@ -36,6 +36,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
     // Do any additional setup after loading the view.
     [self loadPhotos];
+    
+    [self setTitle:@"Dest"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,8 +112,23 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DSTPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.cellMedia = [self.photos objectAtIndex:indexPath.row];
-    cell.cellMedia.delegate = cell;
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    float scrollViewHeight = scrollView.frame.size.height;
+    float scrollContentSizeHeight = scrollView.contentSize.height;
+    float scrollOffset = scrollView.contentOffset.y;
+    
+    if (scrollOffset == 0)
+    {
+        // then we are at the top
+    }
+    else if (scrollOffset + scrollViewHeight == scrollContentSizeHeight)
+    {
+        // then we are at the end
+        [self loadPhotos];
+    }
 }
 
 #pragma mark <UICollectionViewDelegate>
