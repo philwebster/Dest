@@ -13,6 +13,7 @@
 
 + (id)singleton;
 
++ (NSString *)driveTimeFromTimeInterval:(CGFloat)timeInSeconds;
 - (void)directionsToLocation:(CLLocationCoordinate2D)toLocation completion:(void (^)(MKRoute *))completion;
 - (void)directionsToLocation:(CLLocationCoordinate2D)toLocation fromLocation:(CLLocationCoordinate2D)fromLocation completion:(void (^)(MKRoute *))completion;
 

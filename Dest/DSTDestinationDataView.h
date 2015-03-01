@@ -17,4 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *expediaButton;
 @property (weak, nonatomic) DSTInstagramMedia *media;
 
+- (void)updateButtons;
+
 @end

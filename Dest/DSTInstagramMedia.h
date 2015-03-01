@@ -12,19 +12,20 @@
 @protocol mediaUpdateDelegate
 
 - (void)expediaUrlAdded;
-- (void)directionsAdded;
+- (void)directionsAdded:(MKRoute *)route;
 
 @end
 
 @interface DSTInstagramMedia : NSObject
 
 @property (nonatomic, readonly) MKMapItem *mapItem;
-@property (nonatomic, readonly) MKRoute *route;
-@property (nonatomic, readonly) NSDictionary *expediaResponse;
-@property (nonatomic, strong) NSDictionary *bestPackage;
+@property (nonatomic, strong) MKRoute *route;
+@property (nonatomic, strong) NSDictionary *tripInfo;
 @property (nonatomic, strong) id<mediaUpdateDelegate> delegate;
 @property (nonatomic, strong) InstagramMedia *media;
 
 - (id)initWithIGMedia:(InstagramMedia *)media;
+- (void)populateDirections;
+- (void)populateTripInfo;
 
 @end

@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 @import MapKit;
 
-@interface ExpediaEngine : NSObject
+@interface ExpediaEngine : NSObject {
+    CLLocationManager *locationManager;
+}
 
 + (id)singleton;
 
-- (NSString *)airportIDForLocation:(CLLocationCoordinate2D)location;
+- (void)airportIDForLocation:(CLLocationCoordinate2D)location completion:(void (^)(NSDictionary *))completion;
+- (void)tripInfoForOrigin:(CLLocationCoordinate2D)origin destination:(CLLocationCoordinate2D)destination completion:(void (^)(NSDictionary *))completion;
+- (void)tripInfoForOriginAirport:(NSDictionary *)originAirport destination:(NSDictionary *)destinationAirport destinationID:(NSString *)destID completion:(void (^)(NSDictionary *))completion;
 
 @end

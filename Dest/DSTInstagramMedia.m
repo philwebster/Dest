@@ -18,11 +18,27 @@
         _media = media;
         _mapItem = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:_media.location addressDictionary:nil]];
         _mapItem.name = _media.locationName;
-        [[MapEngine singleton] directionsToLocation:_media.location completion:^(MKRoute *route) {
-            _route = route;
-        }];
     }
     return self;
+}
+
+- (void)populateDirections {
+    if (_route) {
+        return;
+    }
+    [[MapEngine singleton] directionsToLocation:_media.location completion:^(MKRoute *route) {
+        [self setRoute:route];
+    }];
+}
+
+- (void)populateTripInfo {
+    if (_tripInfo) {
+        return;
+    }
+    [[ExpediaEngine singleton] tripInfoForOrigin:CLLocationCoordinate2DMake(-999, -999) destination:_media.location completion:^(NSDictionary *tripInfo) {
+        _tripInfo = tripInfo;
+        NSLog(@"dictionary in instagrammedia: %@", tripInfo);
+    }];
 }
 
 @end

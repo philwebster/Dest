@@ -7,6 +7,7 @@
 //
 
 #import "DSTDestinationDataView.h"
+#import "MapEngine.h"
 @import MapKit;
 
 @implementation DSTDestinationDataView
@@ -32,12 +33,27 @@
 - (void)setMedia:(DSTInstagramMedia *)media {
     _media = media;
     [self.nameLabel setText:media.media.locationName];
+    if (!_media.route) {
+        self.mapButton.hidden = YES;
+    }
 //    if (_media.bestPackage[@"DetailsUrl"]) {
 //        [self.expediaButton setTitle:[NSString stringWithFormat:@"Expedia: %@", _media.bestPackage[@"PackagePrice"][@"TotalPrice"][@"Value"]] forState:UIControlStateNormal];
 //        self.expediaButton.hidden = NO;
 //    }
 //    if (_media.directions || YES) {
 //        self.mapButton.hidden = YES;
+//    }
+}
+
+- (void)updateButtons {
+    if (_media.route) {
+        NSString *routeTime = [MapEngine driveTimeFromTimeInterval:[_media.route expectedTravelTime]];
+        [self.mapButton setTitle:routeTime forState:UIControlStateNormal];
+        self.mapButton.hidden = NO;
+    }
+//    if (_media.tripInfo) {
+//        [self.expediaButton setTitle:@"$$$" forState:UIControlStateNormal];
+//        [self.expediaButton
 //    }
 }
 
@@ -65,12 +81,12 @@
 }
 
 - (void)openExpedia {
-    NSString *urlString = [[_media.bestPackage objectForKey:@"DetailsUrl"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    if (!urlString) {
-        return;
-    }
-    NSURL *expediaURL = [[NSURL alloc] initWithString:urlString];
-    [[UIApplication sharedApplication] openURL:expediaURL];
+////    NSString *urlString = [[_media.tripInfo objectForKey:@"DetailsUrl"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    if (!urlString) {
+//        return;
+//    }
+//    NSURL *expediaURL = [[NSURL alloc] initWithString:urlString];
+//    [[UIApplication sharedApplication] openURL:expediaURL];
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.google.com"]];
 }
 

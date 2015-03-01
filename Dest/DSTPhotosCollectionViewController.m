@@ -43,6 +43,11 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    [[self.photos objectAtIndex:indexPath.row] populateDirections];
+    [[self.photos objectAtIndex:indexPath.row] populateTripInfo];
+}
+
 - (void)loadPhotos {
     InstagramEngine *sharedEngine = [InstagramEngine sharedEngine];
     if (sharedEngine.accessToken)
